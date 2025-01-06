@@ -1,0 +1,454 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TinyGPSPlusNF</name>
+    </assembly>
+    <members>
+        <member name="T:TinyGPSPlusNF.TinyGPSDegrees">
+            <summary>
+            Decimal degrees notation for latitude and longitude.
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSDegrees.HoleDegrees">
+            <summary>
+            Degrees hole part (absolute value).
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSDegrees.Billionths">
+            <summary>
+            Degrees fractional part.
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSDegrees.Degrees">
+            <summary>
+            Degrees value.
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSDegrees.Negative">
+            <summary>
+            Indicates wheter the <c>Degrees</c> value is negative or not.
+            </summary>
+        </member>
+        <member name="M:TinyGPSPlusNF.TinyGPSDegrees.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TinyGPSPlusNF.TinyGPSDegrees"/> class.
+            </summary>
+        </member>
+        <member name="T:TinyGPSPlusNF.TinyGPSData">
+            <summary>
+            Common definition for GPS data extracted from NMEA sentences.
+            </summary>
+        </member>
+        <member name="F:TinyGPSPlusNF.TinyGPSData._valid">
+            <summary>
+            Indicates whether the current data's value is considered valid or not.
+            </summary>
+        </member>
+        <member name="F:TinyGPSPlusNF.TinyGPSData._updated">
+            <summary>
+            Indicates whether the object's value has been updated since the last time it's been queried.
+            </summary>
+        </member>
+        <member name="F:TinyGPSPlusNF.TinyGPSData._lastCommitTime">
+            <summary>
+            Gets the number of milliseconds since the object's last update.
+            </summary>
+        </member>
+        <member name="F:TinyGPSPlusNF.TinyGPSData._forceCommit">
+            <summary>
+            Indicates whether the current data's value should be committed regardless of its validity.
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSData.IsValid">
+            <summary>
+            Indicates whether the object contains any valid data and is safe to query.
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSData.IsUpdated">
+            <summary>
+            Indicates whether the object's value has been updated (not necessarily changed) since the last time it's been queried.
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSData.Age">
+            <summary>
+            Gets the number of milliseconds since the object's last update. A big value may be a sign of a problem like a lost fix.
+            </summary>
+        </member>
+        <member name="T:TinyGPSPlusNF.TinyGPSAltitude">
+            <summary>
+            Represents altitude info in meters, kilometers, miles or feet.
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSAltitude.Value">
+            <summary>
+            Raw altitude in meters.
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSAltitude.Meters">
+            <summary>
+            Altitude in meters.
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSAltitude.Miles">
+            <summary>
+            Altitude in miles.
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSAltitude.Kilometers">
+            <summary>
+            Altitude in kilometers.
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSAltitude.Feet">
+            <summary>
+            Altitude in feet.
+            </summary>
+        </member>
+        <member name="T:TinyGPSPlusNF.TinyGPSCourse">
+            <summary>
+            Cardinal direction data.
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSCourse.Value">
+            <summary>
+            Raw course in degrees.
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSCourse.Degrees">
+            <summary>
+            Course in degrees.
+            </summary>
+        </member>
+        <member name="T:TinyGPSPlusNF.TinyGPSCustom">
+            <summary>
+            Represents an object allowing custom NMEA sentence extraction of a value.
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSCustom.SentenceName">
+            <summary>
+            Sentence identifier.
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSCustom.TermNumber">
+            <summary>
+            Index of the term in the sentence.
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSCustom.Value">
+            <summary>
+            Extracted value as <see cref="T:System.String"/>.
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSCustom.NumericValue">
+            <summary>
+            Extracted value as <see cref="T:TinyGPSPlusNF.TinyGPSFloat"/>.
+            </summary>
+        </member>
+        <member name="M:TinyGPSPlusNF.TinyGPSCustom.#ctor(TinyGPSPlusNF.TinyGPSPlus,System.String,System.Int32,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TinyGPSPlusNF.TinyGPSCustom"/> class.
+            </summary>
+            <param name="gps"><see cref="T:TinyGPSPlusNF.TinyGPSPlus"/> instance.</param>
+            <param name="sentenceName">Sentence identifier.</param>
+            <param name="termNumber">Index of the term in the sentence.</param>
+            <param name="isNumeric">Value will be available as a <see cref="T:TinyGPSPlusNF.TinyGPSFloat"/> if <c>true</c>.</param>
+        </member>
+        <member name="T:TinyGPSPlusNF.TinyGPSDate">
+            <summary>
+            Date data.
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSDate.Value">
+            <summary>
+            Raw date in DDMMYY format.
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSDate.Year">
+            <summary>
+            Year (2000+).
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSDate.Month">
+            <summary>
+            Month (1-12).
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSDate.Day">
+            <summary>
+            Day (1-31).
+            </summary>
+        </member>
+        <member name="M:TinyGPSPlusNF.TinyGPSDate.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TinyGPSPlusNF.TinyGPSDate"/> class.
+            </summary>
+        </member>
+        <member name="T:TinyGPSPlusNF.TinyGPSFloat">
+            <summary>
+            Float data.
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSFloat.Value">
+            <summary>
+            Float value.
+            </summary>
+        </member>
+        <member name="M:TinyGPSPlusNF.TinyGPSFloat.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TinyGPSPlusNF.TinyGPSFloat"/> class.
+            </summary>
+        </member>
+        <member name="T:TinyGPSPlusNF.TinyGPSHDOP">
+            <summary>
+            HDOP data.
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSHDOP.Value">
+            <summary>
+            Horizontal Dilution of Precision.
+            </summary>
+        </member>
+        <member name="T:TinyGPSPlusNF.TinyGPSInteger">
+            <summary>
+            Integer data.
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSInteger.Value">
+            <summary>
+            Integer value.
+            </summary>
+        </member>
+        <member name="M:TinyGPSPlusNF.TinyGPSInteger.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TinyGPSPlusNF.TinyGPSInteger"/> class.
+            </summary>
+        </member>
+        <member name="T:TinyGPSPlusNF.TinyGPSLocation">
+            <summary>
+            Pair of latitude and longitude coordinates.
+            </summary>
+        </member>
+        <member name="F:TinyGPSPlusNF.TinyGPSLocation.Latitude">
+            <summary>
+            The latitude.
+            </summary>
+        </member>
+        <member name="F:TinyGPSPlusNF.TinyGPSLocation.Longitude">
+            <summary>
+            The longitude.
+            </summary>
+        </member>
+        <member name="M:TinyGPSPlusNF.TinyGPSLocation.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TinyGPSPlusNF.TinyGPSLocation"/> class.
+            </summary>
+        </member>
+        <member name="T:TinyGPSPlusNF.TinyGPSPlus">
+            <summary>
+            This class allows parsing NMEA sentences provided by GPS modules.
+            </summary>
+        </member>
+        <member name="F:TinyGPSPlusNF.TinyGPSPlus.Location">
+            <summary>
+            The latest position fix.
+            </summary>
+        </member>
+        <member name="F:TinyGPSPlusNF.TinyGPSPlus.Date">
+            <summary>
+            The latest date fix (UTC).
+            </summary>
+        </member>
+        <member name="F:TinyGPSPlusNF.TinyGPSPlus.Time">
+            <summary>
+            The latest time fix (UTC).
+            </summary>
+        </member>
+        <member name="F:TinyGPSPlusNF.TinyGPSPlus.Speed">
+            <summary>
+            Current ground speed.
+            </summary>
+        </member>
+        <member name="F:TinyGPSPlusNF.TinyGPSPlus.Course">
+            <summary>
+            Current ground course.
+            </summary>
+        </member>
+        <member name="F:TinyGPSPlusNF.TinyGPSPlus.Altitude">
+            <summary>
+            Latest latitude fix.
+            </summary>
+        </member>
+        <member name="F:TinyGPSPlusNF.TinyGPSPlus.Satellites">
+            <summary>
+            The number of visible, participating satellites.
+            </summary>
+        </member>
+        <member name="F:TinyGPSPlusNF.TinyGPSPlus.Hdop">
+            <summary>
+            Horizontal Dilution of Precision.
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSPlus.LibraryVersion">
+            <summary>
+            Gets current version of the library.
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSPlus.CharsProcessed">
+            <summary>
+            The total number of characters received by the object.
+            </summary>
+            <remarks>
+            For debug purposes.
+            </remarks>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSPlus.SentencesWithFix">
+            <summary>
+            The number of $GPRMC or $GPGGA sentences that had a fix.
+            </summary>
+            <remarks>
+            For debug purposes.
+            </remarks>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSPlus.FailedChecksum">
+            <summary>
+            The number of sentences of all types that failed the checksum test.
+            </summary>
+            <remarks>
+            For debug purposes.
+            </remarks>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSPlus.PassedChecksum">
+            <summary>
+            The number of sentences of all types that passed the checksum test.
+            </summary>
+            <remarks>
+            For debug purposes.
+            </remarks>
+        </member>
+        <member name="M:TinyGPSPlusNF.TinyGPSPlus.DistanceBetween(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Returns distance in meters between two positions, both specified as
+            signed decimal-degrees latitude and longitude. Uses great-circle
+            distance computation for hypothetical sphere of radius 6372795 meters.
+            Because Earth is no exact sphere, rounding errors may be up to 0.5%.
+            </summary>
+            <remarks>Courtesy of Maarten Lamers.</remarks>
+            <param name="lat1">Latitude of first coordinates</param>
+            <param name="long1">Longitude of first coordinates</param>
+            <param name="lat2">Latitude of second coordinates</param>
+            <param name="long2">Longitude of second coordinates</param>
+            <returns>Distance in meters.</returns>
+        </member>
+        <member name="M:TinyGPSPlusNF.TinyGPSPlus.CourseTo(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Returns course in degrees (North=0, West=270) from position 1 to
+            position 2, both specified as signed decimal-degrees latitude and
+            longitude. Because Earth is no exact sphere, calculated course may
+            be off by a tiny fraction.
+            </summary>
+            <remarks>Courtesy of Maarten Lamers</remarks>
+            <param name="lat1">Latitude of first coordinates</param>
+            <param name="long1">Longitude of first coordinates</param>
+            <param name="lat2">Latitude of second coordinates</param>
+            <param name="long2">Longitude of second coordinates</param>
+            <returns>Course in degrees.</returns>
+        </member>
+        <member name="M:TinyGPSPlusNF.TinyGPSPlus.Cardinal(System.Single)">
+            <summary>
+            Display the course in a friendly, human-readable compass directions.
+            </summary>
+            <param name="course">Input course value</param>
+            <returns>Compass direction.</returns>
+        </member>
+        <member name="M:TinyGPSPlusNF.TinyGPSPlus.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TinyGPSPlusNF.TinyGPSPlus"/> class.
+            </summary>
+        </member>
+        <member name="M:TinyGPSPlusNF.TinyGPSPlus.Encode(System.String)">
+            <summary>
+            Feeds NMEA sentence from the GPS module.
+            </summary>
+            <param name="s">NMEA sentence.</param>
+            <returns>Value <c>true</c> when a sentence is complete and valid, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TinyGPSPlusNF.TinyGPSPlus.Encode(System.Char)">
+            <summary>
+            Feeds NMEA characters from the GPS module.
+            </summary>
+            <param name="c">Character from an NMEA sentence.</param>
+            <returns>Value <c>true</c> when a sentence is complete and valid, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:TinyGPSPlusNF.TinyGPSPlus.InsertCustom(TinyGPSPlusNF.TinyGPSCustom)">
+            <summary>
+            Add custom NMEA sentence extractor to this instance.
+            </summary>
+            <param name="elt"></param>
+        </member>
+        <member name="T:TinyGPSPlusNF.TinyGPSSpeed">
+            <summary>
+            Speed data.
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSSpeed.Value">
+            <summary>
+            Raw speed in knots.
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSSpeed.Knots">
+            <summary>
+            Speed in knots.
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSSpeed.Mph">
+            <summary>
+            Speed in miles per hour.
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSSpeed.Mps">
+            <summary>
+            Speed in meters per second.
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSSpeed.Kmph">
+            <summary>
+            Speed in kilometers per hour.
+            </summary>
+        </member>
+        <member name="T:TinyGPSPlusNF.TinyGPSTime">
+            <summary>
+            Time data.
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSTime.Value">
+            <summary>
+            Raw time in HHMMSSCC format.
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSTime.Hour">
+            <summary>
+            Hour (0-23).
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSTime.Minute">
+            <summary>
+            Minute (0-59).
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSTime.Second">
+            <summary>
+            Second (0-59).
+            </summary>
+        </member>
+        <member name="P:TinyGPSPlusNF.TinyGPSTime.Centisecond">
+            <summary>
+            100ths of a second (0-99).
+            </summary>
+        </member>
+        <member name="M:TinyGPSPlusNF.TinyGPSTime.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TinyGPSPlusNF.TinyGPSTime"/> class.
+            </summary>
+        </member>
+    </members>
+</doc>

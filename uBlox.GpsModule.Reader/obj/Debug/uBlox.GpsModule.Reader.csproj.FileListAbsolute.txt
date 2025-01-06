@@ -1,0 +1,7 @@
+D:\Projects\uBlox.GpsModule.Project\uBlox.GpsModule.Reader\bin\Debug\uBlox.GpsModule.Reader.exe.config
+D:\Projects\uBlox.GpsModule.Project\uBlox.GpsModule.Reader\bin\Debug\uBlox.GpsModule.Reader.exe
+D:\Projects\uBlox.GpsModule.Project\uBlox.GpsModule.Reader\bin\Debug\uBlox.GpsModule.Reader.pdb
+D:\Projects\uBlox.GpsModule.Project\uBlox.GpsModule.Reader\obj\Debug\uBlox.GpsModule.Reader.csproj.AssemblyReference.cache
+D:\Projects\uBlox.GpsModule.Project\uBlox.GpsModule.Reader\obj\Debug\uBlox.GpsModule.Reader.csproj.CoreCompileInputs.cache
+D:\Projects\uBlox.GpsModule.Project\uBlox.GpsModule.Reader\obj\Debug\uBlox.GpsModule.Reader.exe
+D:\Projects\uBlox.GpsModule.Project\uBlox.GpsModule.Reader\obj\Debug\uBlox.GpsModule.Reader.pdb
